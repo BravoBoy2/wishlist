@@ -4,6 +4,9 @@ import { WishItem } from '../shared/models/wishItem';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+// import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+// import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -11,16 +14,22 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, MatListModule, MatCheckboxModule],
+  imports: [RouterOutlet, CommonModule, MatListModule, MatCheckboxModule, MatInputModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 
 export class AppComponent {
-  items = [
-    new WishItem('To Learn Angular', 'using angular'),
-    new WishItem('Get Coffee', 'Following Envado Tuts guide', true),
-    new WishItem('Find grass that cuts itself', "I don't know if such thing exist")
+  items : WishItem[] = [
+
+    new WishItem('To Learn Angular'),
+    new WishItem('Get Coffee', true),
+    new WishItem('Find grass that cuts itself')
   ];
   title = 'my wishlist';
+
+  toggleItem(item : WishItem){
+    item.isComplete = !item.isComplete;
+    console.log(item);
+  }
 }

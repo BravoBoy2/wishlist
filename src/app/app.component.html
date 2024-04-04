@@ -1,10 +1,27 @@
 <div class="container">
+
+
+  <div class="form">
+<mat-form-field>
+  <mat-label>Input</mat-label>
+  <input matInput>
+</mat-form-field>
+</div>
+
+
+
+
+  <div *ngIf="items.length === 0">
+  No wishlist to display 
+  </div>
   <div >
-  <mat-list *ngFor="let item of items">
-    <mat-list-item>
-      <mat-checkbox></mat-checkbox>
+  <mat-list *ngFor="let item of items; index as i">
+    <mat-checkbox [checked]="item.isComplete" 
+      [attr.data-index]="i" >
+    <mat-list-item (click)="toggleItem(item)">
       {{ item.wishText }}
     </mat-list-item>
+    </mat-checkbox>
   </mat-list>
  
 </div>
