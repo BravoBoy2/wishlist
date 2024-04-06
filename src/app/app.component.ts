@@ -4,9 +4,9 @@ import { WishItem } from '../shared/models/wishItem';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-// import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
-// import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 
 
@@ -14,7 +14,7 @@ import {MatInputModule} from '@angular/material/input';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, MatListModule, MatCheckboxModule, MatInputModule],
+  imports: [RouterOutlet, CommonModule, MatListModule, MatCheckboxModule, MatInputModule, MatButtonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
