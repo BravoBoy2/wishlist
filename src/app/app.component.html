@@ -1,19 +1,40 @@
 <div class="container">
 
 <form class="wishlist-form">
-<mat-form-field>
+<mat-form-field color="accent">
   <mat-label>type here</mat-label>
-  <input matInput>
+  <input matInput name="new-wish-text" [(ngModel)]="newWishText">
 </mat-form-field>
- <button type="submit" mat-raised-button color="primary">Add wish</button>
+ <button 
+ type="submit" 
+ mat-raised-button 
+ color="accent"
+ (click)="$event.preventDefault(); addNewWish()"
+ >
+ Add wish
+ </button>
 </form>
 
 
-  <div *ngIf="items.length === 0">
-  No wishlist to display 
+
+<div class="filter">
+<mat-chip-listbox 
+aria-label="Fish selection"
+[(ngModel)]="listFilter"
+(ngModelChange)="filterChanged($event)"
+>
+  <mat-chip-option value="0">All</mat-chip-option>
+  <mat-chip-option value="1" color="warn">Unfulfilled</mat-chip-option>
+  <mat-chip-option value="2" color="accent" selected>fulfilled</mat-chip-option>
+</mat-chip-listbox>
+</div>
+
+
+  <div class="emptyList" *ngIf="visibleItems.length === 0">
+  <h3> No wishlist to display </h3>
   </div>
   <div >
-  <mat-list *ngFor="let item of items; index as i">
+  <mat-list *ngFor="let item of visibleItems; index as i">
     <mat-checkbox [checked]="item.isComplete" 
       [attr.data-index]="i" >
     <mat-list-item (click)="toggleItem(item)">

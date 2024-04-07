@@ -3,14 +3,34 @@
 }
 
 .wishlist-form{
-  display: flexbox;
-padding: 1em;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  align-items: center;
+  padding: 1em;
+  justify-content: center;
 }
 
-.wishlist-form input{
+.wishlist-form input, mat-form-field{
+  display: inline-flex;
   width: 100%;
+  align-self: center;
+  justify-content: center;
 }
 
 .wishlist-form button{
   margin: 10px;
+}
+
+.emptyList{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em;
+}
+
+
+.filter{
+  max-width: 35vw;
 }
