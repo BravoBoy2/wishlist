@@ -12,6 +12,12 @@ import {MatChipsModule} from '@angular/material/chips';
 
 
 
+const filters = [
+  (item : WishItem) => item,
+  (item : WishItem) => !item.isComplete,
+  (item : WishItem) => item.isComplete
+]
+
 
 
 @Component({
@@ -30,9 +36,12 @@ export class AppComponent {
     new WishItem('Find grass that cuts itself')
   ];
   title = 'my wishlist';
-  listFilter : string = '0';
+  listFilter : any = '0';
   newWishText = '';
-  visibleItems : WishItem[] = this.items;
+
+ get visibleItems() : WishItem[] {
+  return this.items.filter(filters[this.listFilter]);
+ };
 
   addNewWish(){
     // todo: add wish to item array
@@ -46,23 +55,4 @@ this.newWishText = '';
     console.log(item);
   }
 
-  filterChanged(value : any){
-    value = Number(value);
-   switch (value){
-    case 0:
-      this.visibleItems = this.items;
-      break;
-      
-      case 1:
-        this.visibleItems = this.items.filter(item => !item.isComplete);
-        break;
-
-        case 2:
-         this.visibleItems = this.items.filter(item => item.isComplete);
-         break;
-
-         default:
-          this.visibleItems = this.items;
-   }
-  }
 }

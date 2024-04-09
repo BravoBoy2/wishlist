@@ -21,7 +21,6 @@
 <mat-chip-listbox 
 aria-label="Fish selection"
 [(ngModel)]="listFilter"
-(ngModelChange)="filterChanged($event)"
 >
   <mat-chip-option value="0">All</mat-chip-option>
   <mat-chip-option value="1" color="warn">Unfulfilled</mat-chip-option>
@@ -35,12 +34,13 @@ aria-label="Fish selection"
   </div>
   <div >
   <mat-list *ngFor="let item of visibleItems; index as i">
+     <mat-list-item (click)="toggleItem(item)">
     <mat-checkbox [checked]="item.isComplete" 
       [attr.data-index]="i" >
-    <mat-list-item (click)="toggleItem(item)">
       {{ item.wishText }}
+      </mat-checkbox>
     </mat-list-item>
-    </mat-checkbox>
+    
   </mat-list>
  
 </div>
