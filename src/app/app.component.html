@@ -2,7 +2,7 @@
 
 <form class="wishlist-form">
 <mat-form-field color="accent">
-  <mat-label>type here</mat-label>
+  <mat-label>type your wish to add </mat-label>
   <input matInput name="new-wish-text" [(ngModel)]="newWishText">
 </mat-form-field>
  <button 
@@ -19,7 +19,7 @@
 
 <div class="filter">
 <mat-chip-listbox 
-aria-label="Fish selection"
+aria-label="Wish Types"
 [(ngModel)]="listFilter"
 >
   <mat-chip-option value="0">All</mat-chip-option>
@@ -29,18 +29,8 @@ aria-label="Fish selection"
 </div>
 
 
-  <div class="emptyList" *ngIf="visibleItems.length === 0">
-  <h3> No wishlist to display </h3>
-  </div>
-  <div >
-  <mat-list *ngFor="let item of visibleItems; index as i">
-     <mat-list-item (click)="toggleItem(item)">
-    <mat-checkbox [checked]="item.isComplete" 
-      [attr.data-index]="i" >
-      {{ item.wishText }}
-      </mat-checkbox>
-    </mat-list-item>
-    
-  </mat-list>
- 
+  <wish-list 
+  [wishes]="visibleItems">
+  </wish-list>
 </div>
+  

@@ -23,14 +23,10 @@
   margin: 10px;
 }
 
-.emptyList{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1em;
-}
+
 
 
 .filter{
+  padding: 0em 0.8em;
   max-width: 35vw;
 }

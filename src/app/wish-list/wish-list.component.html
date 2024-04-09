@@ -1,0 +1,15 @@
+<div class="emptyList" *ngIf="wishes.length === 0">
+  <h3> No wishlist to display </h3>
+  </div>
+  <div class="wishList" >
+  <mat-list  *ngFor="let item of wishes; index as i">
+     <mat-list-item (click)="toggleItem(item)">
+    <mat-checkbox [checked]="item.isComplete" 
+      [attr.data-index]="i" >
+      {{ item.wishText }}
+      </mat-checkbox>
+    </mat-list-item>
+    
+  </mat-list>
+  </div>
+ 
