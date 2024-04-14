@@ -7,15 +7,10 @@
 
 
 <div class="filter">
-<mat-chip-listbox 
-aria-label="Wish Types"
-[(ngModel)]="listFilter"
->
-  <mat-chip-option value="0">All</mat-chip-option>
-  <mat-chip-option value="1" color="warn">Unfulfilled</mat-chip-option>
-  <mat-chip-option value="2" color="accent" selected>fulfilled</mat-chip-option>
-</mat-chip-listbox>
-</div>
+<wish-filter (filter)="filter = $event">
+
+</wish-filter>
+
 
 
   <wish-list 
