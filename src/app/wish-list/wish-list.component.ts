@@ -17,7 +17,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './wish-list.component.html',
   styleUrl: './wish-list.component.css'
 })
-export class WishListComponent  {
+export class WishListComponent {
  @Input() wishes : WishItem[] = [];
 
    toggleItem(item : WishItem){

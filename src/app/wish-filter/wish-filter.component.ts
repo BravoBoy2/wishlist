@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, NgModule, Input } from '@angular/core';
+import { Component, Output, EventEmitter, NgModule, Input, OnInit } from '@angular/core';
 import { WishItem } from '../../shared/models/wishItem';
 import { MatChipsModule } from '@angular/material/chips';
 import { CommonModule } from '@angular/common';
@@ -21,15 +21,21 @@ const filters = [
   templateUrl: './wish-filter.component.html',
   styleUrl: './wish-filter.component.css'
 })
-export class WishFilterComponent {
+export class WishFilterComponent implements OnInit {
+  ngOnInit(): void {
+    this.filter.emit(filters[0]);
+  }
 @Output() filter = new EventEmitter<any>();
 
 
 
- @Input() initialFilterValue: any = '0'; // Default filter value
-  listFilter: any = this.initialFilterValue;
+// @Input() listFilter: string = '0' ; // Default filter value
+ 
+// @Input() listFilter = this.filter.emit(filters[0]);
+listFilter : any = '0';
 
-  changeFilter(value: any = '0') {
+  changeFilter(value: any) {
+    this.filter.emit(filters[0]);
     this.filter.emit(filters[value]);
   }
 }
