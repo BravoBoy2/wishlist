@@ -1,0 +1,14 @@
+<form class="wishlist-form">
+<mat-form-field color="accent">
+  <mat-label>type your wish to add </mat-label>
+  <input matInput name="new-wish-text" [(ngModel)]="newWishText">
+</mat-form-field>
+ <button 
+ type="submit" 
+ mat-raised-button 
+ color="accent"
+ (click)="$event.preventDefault(); addNewWish()"
+ >
+ Add wish
+ </button>
+</form>

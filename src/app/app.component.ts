@@ -4,11 +4,13 @@ import { WishItem } from '../shared/models/wishItem';
 import { CommonModule } from '@angular/common';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { MatChipsModule } from '@angular/material/chips';
-import { FormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -25,7 +27,7 @@ const filters = [
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, WishListComponent, MatChipsModule, FormsModule, MatListModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+  imports: [RouterOutlet, CommonModule, WishListComponent, MatChipsModule, MatListModule, MatFormFieldModule, MatInputModule, AddWishFormComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -39,18 +41,13 @@ export class AppComponent {
   ];
   title = 'my wishlist';
   listFilter : any = '0';
-  newWishText = '';
+  
 
  get visibleItems() : WishItem[] {
   return this.items.filter(filters[this.listFilter]);
  };
 
-  addNewWish(){
-    // todo: add wish to item array
-    //clear the textbox
-this.items.push(new WishItem(this.newWishText));
-this.newWishText = '';
-  }
+
 
  
 

@@ -2,26 +2,7 @@
   padding: 2em;
 }
 
-.wishlist-form{
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  align-self: center;
-  align-items: center;
-  padding: 1em;
-  justify-content: center;
-}
 
-.wishlist-form input, mat-form-field{
-  display: inline-flex;
-  width: 100%;
-  align-self: center;
-  justify-content: center;
-}
-
-.wishlist-form button{
-  margin: 10px;
-}
 
 
 
