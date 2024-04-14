@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatListModule} from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
@@ -17,11 +17,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './wish-list.component.html',
   styleUrl: './wish-list.component.css'
 })
-export class WishListComponent implements OnInit {
-  constructor(){}
-  ngOnInit(): void {
-  }
-
+export class WishListComponent  {
  @Input() wishes : WishItem[] = [];
 
    toggleItem(item : WishItem){
