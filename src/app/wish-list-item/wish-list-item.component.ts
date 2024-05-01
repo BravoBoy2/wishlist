@@ -17,6 +17,12 @@ export class WishListItemComponent {
   @Input() fullfilled! : boolean;
   @Output() fullfilledChange = new EventEmitter<boolean>();
 
+
+  get cssClasses() {
+    //  return this.fullfilled ? ['strikeout opacity'] : [];
+    return {'strikeout opacity' : this.fullfilled};
+
+  }
      toggleFullFilled(){
     this.fullfilled = !this.fullfilled;
     this.fullfilledChange.emit(this.fullfilled)
