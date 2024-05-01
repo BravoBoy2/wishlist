@@ -7,22 +7,20 @@ import { FormsModule } from '@angular/forms';
 import {MatChipsModule} from '@angular/material/chips';
 import { WishItem } from '../../shared/models/wishItem';
 import { CommonModule } from '@angular/common';
+import { WishListItemComponent } from '../wish-list-item/wish-list-item.component';
 
 
 
 @Component({
   selector: 'wish-list',
   standalone: true,
-  imports: [MatListModule, MatCheckboxModule, MatButtonModule, MatInputModule, FormsModule, MatChipsModule, CommonModule],
+  imports: [MatListModule, MatCheckboxModule, MatButtonModule, MatInputModule, FormsModule, MatChipsModule, CommonModule, WishListItemComponent],
   templateUrl: './wish-list.component.html',
   styleUrl: './wish-list.component.css'
 })
 export class WishListComponent {
  @Input() wishes : WishItem[] = [];
 
-   toggleItem(item : WishItem){
-    item.isComplete = !item.isComplete;
-    console.log(item);
-  }
+
 
 }

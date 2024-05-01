@@ -1,4 +1,4 @@
-<div class="chip-filter">
+<!-- <div class="chip-filter">
 <mat-chip-listbox 
 aria-label="Wish Types"
 [(ngModel)]="listFilter"
@@ -8,4 +8,12 @@ aria-label="Wish Types"
   <mat-chip-option value="1" selected color="warn">Unfulfilled</mat-chip-option>
   <mat-chip-option value="2" color="accent" >fulfilled</mat-chip-option>
 </mat-chip-listbox>
+</div> -->
+
+<div class="chip-filter">
+  <mat-chip-listbox aria-label="Wish Types" [(ngModel)]="listFilter">
+    <mat-chip-option value="0">All</mat-chip-option>
+    <mat-chip-option value="1" selected color="warn">Unfulfilled</mat-chip-option>
+    <mat-chip-option value="2" color="accent">Fulfilled</mat-chip-option>
+  </mat-chip-listbox>
 </div>

@@ -1,0 +1,19 @@
+<mat-list  >
+     <mat-list-item 
+     
+     (click)="toggleFullFilled()"
+     
+     >
+    <mat-checkbox 
+    
+    [checked]="fullfilled"  >
+    <p [ngClass]="'strikeout'">{{ wishText }}</p>
+
+
+    </mat-checkbox>
+
+     </mat-list-item>
+</mat-list>
+
+
+<!-- [ngClass]="'strikeout'" -->

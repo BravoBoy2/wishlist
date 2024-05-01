@@ -6,3 +6,7 @@
   padding: 0em 0.8em;
   max-width: 35vw;
 }
+
+.strikeout{
+   text-decoration: line-through;
+}
