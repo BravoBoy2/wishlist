@@ -4,7 +4,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CommonModule } from '@angular/common';
 import {MatIconModule } from '@angular/material/icon';
-import events from './../../shared/Services/EventService';
+import {EventService} from './../../shared/Services/EventService';
 
 @Component({
   selector: 'wish-list-item',
@@ -25,9 +25,12 @@ export class WishListItemComponent {
     return {'strikeout opacity' : this.fullfilled};
 
   }
+  constructor(private events : EventService){
+
+  }
 
   removeWish() {
-  events.emit('removeWish', this.wish);
+  this.events.emit('removeWish', this.wish);
   }
      toggleFullFilled(){
     this.wish.isComplete = !this.wish.isComplete;
