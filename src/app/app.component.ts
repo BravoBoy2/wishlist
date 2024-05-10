@@ -19,7 +19,7 @@ import { error } from 'console';
 })
 
 export class AppComponent implements OnInit {
-  items! : WishItem[];
+  items : WishItem[] = [];
 
   filter: any; 
 

@@ -1,5 +1,5 @@
 .wishlist-form{
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-self: center;
@@ -8,13 +8,23 @@
   justify-content: center;
 }
 
-.wishlist-form input, mat-form-field{
+ mat-form-field{
   display: inline-flex;
-  width: 100%;
+  width: 80%;
   align-self: center;
   justify-content: center;
 }
 
 .wishlist-form button{
   margin: 10px;
+  padding: 20px;
+  border-radius: 15px;
 }
+ mat-form-field input{
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  font: inherit;
+}
+
