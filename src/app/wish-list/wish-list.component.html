@@ -1,15 +1,26 @@
-<div class="emptyList" *ngIf="wishes.length === 0">
-  <h3> No wishlist to display </h3>
-  </div>
+   @if(wishes.length === 0){
+      <div class="emptyList">
+        <h3> No wishlist to display </h3>
+
+      </div>
+    }
   <div class="wishList" >
+
+
+
+ @for (wish of wishes; track wish ) {
+  <wish-list-item [wishText]="wish.wishText" [(fullfilled)]="wish.isComplete" ngClass="'strikeout'">
+
+  </wish-list-item>
+ }
  
- <wish-list-item *ngFor="let wish of wishes;"
+ <!-- <wish-list-item *ngFor="let wish of wishes;"
  [wishText]="wish.wishText"
  [(fullfilled)]="wish.isComplete"
  ngClass="'strikeout'"
  >
 
- </wish-list-item>
+ </wish-list-item> -->
  
   </div>
  
