@@ -1,18 +1,26 @@
-<mat-list  >
+<mat-list class="wishItemList" >
      <mat-list-item 
      
      (click)="toggleFullFilled()"
      
      >
-    <mat-checkbox 
-    
-    [checked]="fullfilled"  >
-    <p [ngClass]="cssClasses">{{ wishText }}</p>
+    <mat-checkbox [checked]="wish.isComplete"  >
 
-
-    </mat-checkbox>
+          <p [ngClass]="cssClasses">{{ wish.wishText }}</p>
+     
+     </mat-checkbox>
 
      </mat-list-item>
+
+     <div>
+          <button type="button" 
+          class="btnIcon" mat-icon-button 
+          aria-label="icon button with a close icon"
+          (click)="removeWish()"
+          >
+        <mat-icon>delete</mat-icon>
+      </button>
+     </div>
 </mat-list>
 
 

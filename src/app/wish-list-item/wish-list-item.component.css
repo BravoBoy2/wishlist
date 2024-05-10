@@ -5,3 +5,15 @@
 .opacity{
 color: gray;
 }
+
+
+.wishItemList{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.btnIcon{
+   border: none;
+   background: none;
+}

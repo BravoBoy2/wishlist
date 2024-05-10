@@ -9,7 +9,7 @@
 
 
  @for (wish of wishes; track wish ) {
-  <wish-list-item [wishText]="wish.wishText" [(fullfilled)]="wish.isComplete" ngClass="'strikeout'">
+  <wish-list-item [wish]="wish"  ngClass="'strikeout'">
 
   </wish-list-item>
  }
