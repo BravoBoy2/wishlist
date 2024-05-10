@@ -7,6 +7,7 @@ import { WishFilterComponent } from './wish-filter/wish-filter.component';
 import { WishListItemComponent } from './wish-list-item/wish-list-item.component';
 import {AddWishFormComponent } from './add-wish-form/add-wish-form.component';
 import { WishService } from './wish.service';
+import { error } from 'console';
 
 
 @Component({
@@ -31,9 +32,15 @@ export class AppComponent implements OnInit {
     })
   }
   ngOnInit(): void {
-  this.wishService.getWishes().subscribe((data : any)=> {
+  this.wishService.getWishes().subscribe(
+    (data : any)=> {
     this.items = data;
-  })
+  },
+  (error : any)=>{
+    alert(error.message);
+  }
+
+);
   }
 
 
