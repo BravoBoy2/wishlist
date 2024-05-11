@@ -1,6 +1,6 @@
 .wishlist-form{
   width: 100%;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-self: center;
   align-items: center;
