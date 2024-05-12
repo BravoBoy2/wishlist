@@ -5,6 +5,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { createInvalidEmailDomain } from './InvalidEmailDomain';
 
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -14,6 +15,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
+
+const invalidEmailDomain = createInvalidEmailDomain(['yahoo.com', 'gmail.com']);
 @Component({
   selector: 'app-contact',
   standalone: true,
@@ -27,7 +30,7 @@ export class ContactComponent {
 
   senderName : new FormControl('', Validators.required),
   senderMessage : new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(150)]),
-  emailFormControl : new FormControl('', [Validators.required, Validators.email])
+  emailFormControl : new FormControl('', [Validators.required, Validators.email, invalidEmailDomain])
 
   });
     matcher = new MyErrorStateMatcher();
