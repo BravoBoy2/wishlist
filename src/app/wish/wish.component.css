@@ -1,0 +1,15 @@
+.container{
+  padding: 2em;
+  margin: 2em;
+}
+
+.filter{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.strikeout{
+   text-decoration: line-through;
+}

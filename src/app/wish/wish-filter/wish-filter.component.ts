@@ -1,11 +1,11 @@
 import { Component, Output, EventEmitter, Input, OnInit } from '@angular/core';
-import { WishItem } from '../../shared/models/wishItem';
 import { MatChipsModule } from '@angular/material/chips';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { WishListComponent } from '../wish-list/wish-list.component';
 import {FormsModule } from '@angular/forms';
+import { WishItem } from '../../../shared/models/wishItem';
 
 const filters = [
   (item : WishItem) => item,

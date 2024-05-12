@@ -5,9 +5,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import {MatChipsModule} from '@angular/material/chips';
-import { WishItem } from '../../shared/models/wishItem';
 import { CommonModule } from '@angular/common';
 import { WishListItemComponent } from '../wish-list-item/wish-list-item.component';
+import { WishItem } from '../../../shared/models/wishItem';
 
 
 

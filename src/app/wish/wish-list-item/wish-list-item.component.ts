@@ -1,10 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { WishItem } from '../../shared/models/wishItem';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CommonModule } from '@angular/common';
 import {MatIconModule } from '@angular/material/icon';
-import {EventService} from './../../shared/Services/EventService';
+import { WishItem } from '../../../shared/models/wishItem';
+import { EventService } from '../../../shared/Services/EventService';
 
 @Component({
   selector: 'wish-list-item',

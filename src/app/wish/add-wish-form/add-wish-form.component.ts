@@ -1,10 +1,10 @@
 import { Component, Output, EventEmitter, NgModule } from '@angular/core';
-import { WishItem } from '../../shared/models/wishItem';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { WishItem } from '../../../shared/models/wishItem';
 
 @Component({
   selector: 'add-wish-form',
