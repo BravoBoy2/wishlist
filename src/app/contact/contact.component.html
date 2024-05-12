@@ -1,0 +1,47 @@
+<form class="contactForm" [formGroup]="contactForm" (ngSubmit)="$event.preventDefault(); submitForm()">
+<mat-form-field class="nameInput">
+  <mat-label>Your Name</mat-label>
+  <input matInput formControlName="senderName">
+
+  @if (contactForm.get('senderName')?.hasError && !contactForm.get('senderName')?.hasError('required')){
+      <mat-error>Please enter a valid email address</mat-error>
+    }
+    @if (contactForm.get('senderName')?.hasError('required')) {
+      <mat-error>Name is <strong>required</strong></mat-error>
+    }
+</mat-form-field>
+
+<!-- Code for email field with error handling from Angular Material -->
+<mat-form-field class="emailInput">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput formControlName="emailFormControl"
+
+    [errorStateMatcher]="matcher"
+           placeholder="Ex. pat@example.com">
+
+
+    @if (contactForm.get('emailFormControl')?.hasError && !contactForm.get('emailFormControl')?.hasError('required')){
+      <mat-error>Please enter a valid email address</mat-error>
+    }
+    @if (contactForm.get('emailFormControl')?.hasError('required')) {
+      <mat-error>Email is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+
+
+
+   <mat-form-field class="textArea">
+    <mat-label>Your Message</mat-label>
+    <textarea matInput placeholder="I like to code in Angular" formControlName="senderMessage" required=></textarea>
+    @if (contactForm.get('senderMessage')?.hasError && !contactForm.get('senderMessage')?.hasError('required')){
+      <mat-error>Your message is too short</mat-error>
+    }
+    @if (contactForm.get('senderMessage')?.hasError('required')) {
+      <mat-error>This field is <strong>required</strong></mat-error>
+    }
+  </mat-form-field>
+
+  <mat-divider></mat-divider>
+    <button class="btnSubmit" type="submit" mat-flat-button color="accent" [disabled]="contactForm.invalid" >Submit</button>
+    
+</form>
