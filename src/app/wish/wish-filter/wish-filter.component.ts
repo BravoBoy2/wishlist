@@ -14,12 +14,11 @@ const filters = [
 ]
 
 @Component({
-  selector: 'wish-filter',
-  standalone: true,
-  imports: [MatChipsModule, MatInputModule, CommonModule,
-    MatListModule, WishListComponent, FormsModule], 
-  templateUrl: './wish-filter.component.html',
-  styleUrl: './wish-filter.component.css'
+    selector: 'wish-filter',
+    imports: [MatChipsModule, MatInputModule, CommonModule,
+        MatListModule, WishListComponent, FormsModule],
+    templateUrl: './wish-filter.component.html',
+    styleUrl: './wish-filter.component.css'
 })
 export class WishFilterComponent implements OnInit {
  

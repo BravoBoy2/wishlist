@@ -8,11 +8,10 @@ import { EventService } from '../../shared/Services/EventService';
 import { WishService } from './wish.service';
 
 @Component({
-  selector: 'app-wish',
-  standalone: true,
-  imports: [WishComponent, WishFilterComponent, WishListComponent, WishListItemComponent, AddWishFormComponent],
-  templateUrl: './wish.component.html',
-  styleUrl: './wish.component.css'
+    selector: 'app-wish',
+    imports: [WishComponent, WishFilterComponent, WishListComponent, WishListItemComponent, AddWishFormComponent],
+    templateUrl: './wish.component.html',
+    styleUrl: './wish.component.css'
 })
 export class WishComponent implements OnInit {
 

@@ -7,11 +7,10 @@ import { WishItem } from '../../../shared/models/wishItem';
 import { EventService } from '../../../shared/Services/EventService';
 
 @Component({
-  selector: 'wish-list-item',
-  standalone: true,
-  imports: [MatListModule, MatCheckboxModule, CommonModule, MatIconModule],
-  templateUrl: './wish-list-item.component.html',
-  styleUrl: './wish-list-item.component.css'
+    selector: 'wish-list-item',
+    imports: [MatListModule, MatCheckboxModule, CommonModule, MatIconModule],
+    templateUrl: './wish-list-item.component.html',
+    styleUrl: './wish-list-item.component.css'
 })
 export class WishListItemComponent {
 

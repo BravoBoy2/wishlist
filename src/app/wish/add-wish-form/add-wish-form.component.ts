@@ -7,11 +7,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { WishItem } from '../../../shared/models/wishItem';
 
 @Component({
-  selector: 'add-wish-form',
-  standalone: true,
-  imports: [FormsModule, CommonModule, MatFormFieldModule, MatInputModule, MatButtonModule],
-  templateUrl: './add-wish-form.component.html',
-  styleUrl: './add-wish-form.component.css'
+    selector: 'add-wish-form',
+    imports: [FormsModule, CommonModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+    templateUrl: './add-wish-form.component.html',
+    styleUrl: './add-wish-form.component.css'
 })
 export class AddWishFormComponent {
 

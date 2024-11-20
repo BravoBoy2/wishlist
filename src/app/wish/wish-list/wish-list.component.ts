@@ -12,11 +12,10 @@ import { WishItem } from '../../../shared/models/wishItem';
 
 
 @Component({
-  selector: 'wish-list',
-  standalone: true,
-  imports: [MatListModule, MatCheckboxModule, MatButtonModule, MatInputModule, FormsModule, MatChipsModule, CommonModule, WishListItemComponent],
-  templateUrl: './wish-list.component.html',
-  styleUrl: './wish-list.component.css'
+    selector: 'wish-list',
+    imports: [MatListModule, MatCheckboxModule, MatButtonModule, MatInputModule, FormsModule, MatChipsModule, CommonModule, WishListItemComponent],
+    templateUrl: './wish-list.component.html',
+    styleUrl: './wish-list.component.css'
 })
 export class WishListComponent {
  @Input() wishes : WishItem[] = [];

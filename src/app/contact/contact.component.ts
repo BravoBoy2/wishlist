@@ -18,11 +18,10 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 
 const invalidEmailDomain = createInvalidEmailDomain(['yahoo.com', 'gmail.com']);
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatDividerModule, MatButtonModule],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+    selector: 'app-contact',
+    imports: [MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatDividerModule, MatButtonModule],
+    templateUrl: './contact.component.html',
+    styleUrl: './contact.component.css'
 })
 export class ContactComponent {
   
